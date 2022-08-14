@@ -24,7 +24,7 @@ Create a Macie job. Replace the `accountId` and `buckets` values accordingly.
 ```sh
 aws macie2 create-classification-job \
   --job-type "ONE_TIME" \
-  --name "job 2" \
+  --name "job1" \
   --s3-job-definition '{"bucketDefinitions":[{"accountId":"000000000000", "buckets":["<bucket-name>"]}]}'
 ```
 
