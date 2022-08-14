@@ -45,28 +45,16 @@ resource "aws_s3_object" "secrets_json" {
   etag   = filemd5("./secrets.txt")
 }
 
-# Macie S3 Discovery Results
-
-resource "aws_s3_bucket" "results" {
-  bucket = "${local.project_name}-results-${local.region}-epomatti"
-}
-
-resource "aws_s3_bucket_acl" "results" {
-  bucket = aws_s3_bucket.results.id
-  acl    = "private"
-}
-
-resource "aws_s3_bucket_public_access_block" "results" {
-  bucket = aws_s3_bucket.results.id
-
-  block_public_acls       = true
-  block_public_policy     = true
-  ignore_public_acls      = true
-  restrict_public_buckets = true
-}
-
 ### Macie ###
 
 resource "aws_macie2_account" "test" {
   status = "ENABLED"
+}
+
+output "account_id" {
+  value = local.account_id
+}
+
+output "s3" {
+  value = aws_s3_bucket_acl.main.bucket
 }
