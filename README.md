@@ -7,7 +7,7 @@ terraform init
 terraform apply -auto-approve
 ```
 
-A file with vulnerabilities will be automatically uploaded:
+A file with vulnerabilities will be automatically uploaded to S3:
 
 ```
 Authorization: Basic QWxhZGRpbjpvcGVuIHNlc2FtZQ==
