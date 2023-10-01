@@ -30,4 +30,12 @@ aws macie2 create-classification-job \
 
 Review the results on the console.
 
-<img src="findings.png" />
+<img src="imgs/findings.png" />
+
+## Security Hub
+
+Macie will automatically publish findings to Security Hub.
+
+You can edit the options this in the Console to publish sensitive data findings as well.
+
+<img src="imgs/sechub.png" />
